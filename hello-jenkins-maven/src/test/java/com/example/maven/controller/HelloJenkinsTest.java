@@ -25,7 +25,7 @@ public class HelloJenkinsTest {
         ResultActions result = mockMvc.perform(MockMvcRequestBuilders.get("/api/jenkins"));
 
         result.andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string("HelloJenkins from maven"));
+                .andExpect(MockMvcResultMatchers.content().string("HelloJenkins from maven123"));
 
     }
 

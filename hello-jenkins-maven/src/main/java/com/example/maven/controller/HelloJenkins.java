@@ -12,7 +12,7 @@ public class HelloJenkins {
     @GetMapping("/api/jenkins")
     public String helloJenkins()
     {
-        return "HelloJenkins from maven";
+        return "HelloJenkins from maven123";
     }
 }
 
