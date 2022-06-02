@@ -10,9 +10,7 @@ job("First-Maven-Project-Via-DSL") {
     steps {
         maven('clean package','hello-jenkins-maven/pom.xml')
     }
-    publisher {
-
-        archiveArtifacts 'hello-jenkins-maven/target/*.jar'
-
+    publishers {
+        archiveArtifacts('hello-jenkins-maven/target/*.jar')
     }
 }
