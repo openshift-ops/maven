@@ -15,7 +15,7 @@ pipeline{
         }
         stage('Create Docker Image'){
             steps{
-                sh 'docker build -f hello-jenkins-maven/Dockerfile -t hello-jenkins-maven:0.1'   //env.BUILD_ID is the build number
+                sh 'docker build . -t hello-jenkins-maven:0.1'   //env.BUILD_ID is the build number
             }
         }
 //        stage('Deploy Gradle Project'){
