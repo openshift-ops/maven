@@ -13,20 +13,25 @@ pipeline{
                 }
             }
         }
-        stage('Deploy Gradle Project'){
-            steps {
-                build job: 'First_Gradle_Project'
+        stage('Create Docker Image'){
+            steps{
+                sh 'docker build -t hello-jenkins-maven:${env.BUILD_ID} .'   //env.BUILD_ID is the build number
             }
         }
-        stage('Deploy Sample project'){
-            steps {
-                //for approval
-                timeout(time:5, unit:'DAYS')
-                        {
-                            build job: 'myfirstjob'
-                        }
-            }
-        }
+//        stage('Deploy Gradle Project'){
+//            steps {
+//                build job: 'First_Gradle_Project'
+//            }
+//        }
+//        stage('Deploy Sample project'){
+//            steps {
+//                //for approval
+//                timeout(time:5, unit:'DAYS')
+//                        {
+//                            build job: 'myfirstjob'
+//                        }
+//            }
+//        }
     }
 
 }
