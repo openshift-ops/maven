@@ -17,7 +17,13 @@ pipeline{
             steps {
                 build job: 'First_Gradle_Project'
             }
-
+        }
+        stage('Deploy Sample project'){
+            steps {
+                //for approval
+                timeout(time:5, unit:'DAYS')
+                build job: 'myfirstjob'
+            }
         }
     }
 
