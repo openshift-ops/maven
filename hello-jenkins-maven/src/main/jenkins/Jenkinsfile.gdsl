@@ -22,7 +22,9 @@ pipeline{
             steps {
                 //for approval
                 timeout(time:5, unit:'DAYS')
-                build job: 'myfirstjob'
+                        {
+                            build job: 'myfirstjob'
+                        }
             }
         }
     }
