@@ -14,7 +14,9 @@ pipeline{
             }
         }
         stage('Deploy Gradle Project'){
-            build job: 'First_Gradle_Project'
+            steps {
+                build job: 'First_Gradle_Project'
+            }
 
         }
     }
