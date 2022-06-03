@@ -18,6 +18,11 @@ pipeline{
                 sh 'docker build . -t hello-jenkins-maven:0.1'   //env.BUILD_ID is the build number
             }
         }
+        stage('Run Docker Image'){
+            steps{
+                sh 'docker run --rm -d -p 9090:9090 --name=hello-jenkins-maven hello-jenkins-maven:0.1'   //env.BUILD_ID is the build number
+            }
+        }
 //        stage('Deploy Gradle Project'){
 //            steps {
 //                build job: 'First_Gradle_Project'
